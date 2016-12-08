@@ -11,3 +11,6 @@ render(
   </Provider>,
   document.getElementById('root')
 );
+
+
+// https://github.com/AsherJia/react-redux-starter-kit/tree/master/src/routes
