@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import classNames from 'classnames';
 
-class IndexPage extends Component {
+class PostPage extends Component {
     static propTypes = {
         // enableTableSelection: PropTypes.func.isRequired
     }
@@ -13,14 +13,10 @@ class IndexPage extends Component {
         this.state = { }
     }
 
-    renderTest = () => {
-
-    }
-
     render() {
         return (
             <div>
-                <h1>Home Page...</h1>
+                <h1>Postsasd0000 Page...</h1>
             </div>
         )
     }
@@ -34,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
     return { }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage)
+export default connect(mapStateToProps, mapDispatchToProps)(PostPage)

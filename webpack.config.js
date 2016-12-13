@@ -2,12 +2,17 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        'webpack-dev-server/client?http://localhost:10010', // WebpackDevServer host and port
+        'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+        './src/index.js'
+    ],
 
     output: {
         path: __dirname + '/build',
-        publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: 'http://localhost:10010/',
+        pathinfo: true
     },
 
     module: {
@@ -23,27 +28,10 @@ module.exports = {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin({
-          'process.env': {
-            // This can reduce react lib size and disable some dev feactures like props validation
-            NODE_ENV: JSON.stringify('production')
-          }
-        }),
         new HtmlWebpackPlugin({
           title: 'AsherBlog',
           template: 'template.html',
           inject: true
         })
-    ],
-
-    devtool: 'source-map',
-    devServer: {
-        colors: true,
-        historyApoFailback: true,
-        inLine: true,
-        hot: true,
-        contentBase: './public'
-    }
-
-
+    ]
 }
