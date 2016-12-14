@@ -1,11 +1,14 @@
 import React from 'react';
-import { Route, IndexRedirect, IndexRoute, browserHistory  } from 'react-router';
+import { Route } from 'react-router';
 
 import IndexPage from './containers/home/home.jsx'
+import PostPage from './containers/home/post.jsx'
 
 export default (
-    <Router history = { browserHistory }>
-        <Route path="edit" component={ IndexPage }>
+    <Route path="/">
+        <Route path="user" component={ PostPage }>
+            <Route path="tt" component={ IndexPage }></Route>
         </Route>
-    </Router>
+        <Route path="s1" component={ PostPage }></Route>
+    </Route>
 )
