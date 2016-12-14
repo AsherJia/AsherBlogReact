@@ -9,7 +9,7 @@ module.exports = {
     ],
 
     output: {
-        path: __dirname + '/build',
+        path: __dirname,
         filename: 'bundle.js',
         publicPath: 'http://localhost:10010/',
         pathinfo: true
@@ -17,7 +17,7 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.(js|jsx)$/, exclude: /(node_modules)/, loader: 'babel' },
+            { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
             { test: /\.css$/, loaders: ['style', 'css', 'sass'] },
         ]
     },
