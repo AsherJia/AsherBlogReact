@@ -1,10 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-import thunk from 'redux-thunk'
-import createHistory from 'history/lib/createBrowserHistory'
-import rootReducer from './reducers/index.js'
-import createLogger from 'redux-logger'
-import { reduxReactRouter } from 'redux-router'
-import routes from './routes.jsx'
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
+import createLogger from 'redux-logger';
 
 const finalCreateStore = compose(
     applyMiddleware(thunk),

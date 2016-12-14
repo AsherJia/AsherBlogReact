@@ -21,6 +21,7 @@ class IndexPage extends Component {
         return (
             <div>
                 <h1>Home Page...</h1>
+                { this.props.children }
             </div>
         )
     }

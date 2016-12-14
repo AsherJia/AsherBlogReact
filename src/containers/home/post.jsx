@@ -16,7 +16,7 @@ class PostPage extends Component {
     render() {
         return (
             <div>
-                <h1>Postsasd0000 Page...</h1>
+                <h1>Post Page...</h1>
             </div>
         )
     }
