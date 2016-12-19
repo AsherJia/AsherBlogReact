@@ -4,20 +4,19 @@ import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import store from './configureStore.js';
 
-import IndexPage from './containers/home/home.jsx';
-import PostPage from './containers/home/post.jsx';
+import HomePage from './modules/homePage/container/homePage.jsx';
+import AplayerPage from './modules/musicPlayer/container/aplayerPage.jsx'
+import DplayerPage from './modules/videoPlayer/container/videoPage.jsx'
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store)
 
 export default (
     <Router history={history}>
-        <Route path="/" component={IndexPage}>
-            <Route path="about" component={PostPage}/>
-            <Route path="users" component={PostPage}>
-                <Route path="/user/:userId" component={PostPage}/>
-            </Route>
-            <Route path="*" component={PostPage}/>
+        <Route path="/" component={ HomePage }>
+            <Route path="aplayer" component={ AplayerPage }/>
+            <Route path="dplayer" component={ DplayerPage }/>
+            <Route path="*" component={ HomePage }/>
         </Route>
     </Router>
 )
