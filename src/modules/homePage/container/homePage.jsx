@@ -51,4 +51,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+const connectHomePage = connect(mapStateToProps, mapDispatchToProps)(HomePage)
+module.exports = connectHomePage

@@ -111,4 +111,6 @@ const mapDispatchToProps = (dispatch) => {
     return { }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DPlayerContainer)
+const connectDPlayerContainer = connect(mapStateToProps, mapDispatchToProps)(DPlayerContainer)
+
+module.exports = connectDPlayerContainer
