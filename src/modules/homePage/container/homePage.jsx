@@ -28,6 +28,26 @@ class HomePage extends Component {
         }
     }
 
+    componentDidMount = () => {
+        //document.addEventListener('visibilitychange', this.handleVisibilityChange())
+    }
+
+    handleVisibilityChange = () => {
+        console.log('tragger~~~~~~~')
+        const OriginTitile = document.title;
+        let titleTime;
+
+        if (document.hidden) {
+            document.title = '(つェ⊂)我藏好了哦~ ' + OriginTitile;
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            }, 2000);
+        }
+    }
+
     render() {
         return (
             <div>

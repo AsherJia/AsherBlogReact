@@ -1,15 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="format-detection" content="telephone=no">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body class="html-body">
-    <div id="root"></div>
-    <script type="text/javascript" src="/src/deps/js/flv.min.js"></script>
-    <script type="text/javascript" src="/src/deps/js/hls.min.js"></script>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="format-detection" content="telephone=no">
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body class="html-body">
+        <div id="root"></div>
+        <script type="text/javascript" src="/src/deps/js/flv.min.js"></script>
+        <script type="text/javascript" src="/src/deps/js/hls.min.js"></script>
+        <script type="text/javascript">
+            var OriginTitile = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    document.title = '(つェ⊂)我藏好了哦~ ' + OriginTitile;
+                    clearTimeout(titleTime);
+                }
+                else {
+                    document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
+                    titleTime = setTimeout(function() {
+                        document.title = OriginTitile;
+                    }, 2000);
+                }
+            });
+        </script>
+    </body>
 </html>
