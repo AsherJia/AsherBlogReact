@@ -4,11 +4,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: [
-        'webpack-dev-server/client?http://localhost:10010', // WebpackDevServer host and port
-        'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-        './src'
-    ],
+    entry: {
+        bundle: [
+            'webpack-dev-server/client?http://localhost:10010', // WebpackDevServer host and port
+            'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+            './src/index.js'
+        ]
+    },
 
     output: {
         path: __dirname+'/build',
